@@ -115,22 +115,6 @@ class Solution2:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
 
     result = Solution2().exist(["b","a","b"], "bbabab")
