@@ -63,7 +63,6 @@ def select_sort(nums):
 
 
 # P22 2.3-2
-
 def merge(A, p, q, r):
     print A
     L = A[p:q]
@@ -95,10 +94,24 @@ def merge(A, p, q, r):
     return A
 
 
+# P22 2.3-5
+def search_num2(sort_nums, begin, end, val):
+    mid = (end+begin)/2
+    if sort_nums[mid] == val:
+        return mid
+    elif sort_nums[mid] < val:
+        result = search_num2(sort_nums, mid+1, end, val)
+    else:
+        result = search_num2(sort_nums, begin, mid-1, val)
+    return result
+
+
+
 if __name__ == '__main__':
-    A = [2,1,5,5,7,9,6,8,2,4]
+    nums = range(9)
     # print insert_sort(nums, isIncrease=1)
     # print search_num(nums, 8)
     # print add_binary([1,0,0,1],[1,1,1,1])
     # print select_sort(nums)
-    print merge(A, 3, 6, 7)
+    # print merge(A, 3, 6, 7)
+    print search_num2(nums,0,len(nums)-1, 8)
